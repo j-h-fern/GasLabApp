@@ -1,0 +1,41 @@
+﻿<Window x:Class="GasLabApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GasLabApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1200" Width="1500">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*" />
+            <ColumnDefinition Width="151*" />
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+        <Label>TEST</Label>
+
+
+
+        <Border BorderBrush="Black" BorderThickness="1.5" Background="#FFEDEDDF" Margin="5,5,5,5" Grid.RowSpan="3"/>
+        <ListBox Grid.Row="1" Grid.Column="0" x:Name="TEST" />
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" >
+            <ListBox x:Name="ComList" Height="50" Margin="6,6,6,6" >SELECT COM PORT NUMBER --Defualt virtual (COM30)</ListBox>
+            <Button x:Name="COM_Button" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="GetComPort">Set COM port</Button>
+            <Button x:Name="COM_Connect" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="GetConnection">Connect To Device</Button>
+            <TextBox x:Name="Debug_Text_Box" Height="200" Margin="6,6,6,6"></TextBox>
+            <Button x:Name="Debug_Button" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="DebugDisplay"> Display DeBug Information</Button>
+            
+            
+            
+        </StackPanel>
+
+    </Grid>
+</Window>
