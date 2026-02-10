@@ -55,7 +55,7 @@ namespace GasLabApp
             Encoding? encoding = null,
             bool dtrEnable = false,
             bool rtsEnable = false,
-            bool enableDataReceivedLines = true)
+            bool enableDataReceivedLines = false)
         {
             EnsurePortExists(portName);
             _port = new SerialPort(portName, baudRate, parity, dataBits, stopBits)
@@ -76,8 +76,8 @@ namespace GasLabApp
 
 
             // Event-driven approach for line-based ASCII devices.
-            _port.DataReceived += OnDataReceived;
-            _port.ErrorReceived += OnErrorReceived;
+            //_port.DataReceived += OnDataReceived;
+            //_port.ErrorReceived += OnErrorReceived;
         }
 
         /// <summary>Whether the port is currently open.</summary>

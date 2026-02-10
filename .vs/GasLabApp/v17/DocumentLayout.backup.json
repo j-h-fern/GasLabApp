@@ -1,46 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\",
+  "WorkspaceRootPath": "D:\\GasLabApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\pressurecontrollerdisplay.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:pressurecontrollerdisplay.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\cpc6050emulator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\cpc6050monitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:cpc6050monitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\cpc6050emulator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:cpc6050emulator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\listcomports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:listcomports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\stabletimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:stabletimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\serialportclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:serialportclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\pressurecontrollerdisplay.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:pressurecontrollerdisplay.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\cpc6050client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\cpc6050client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:cpc6050client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\serialportclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:serialportclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|d:\\gaslabapp\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\ireference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:ireference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\icontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:icontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|z:\\qa\\laverton gas\\johnfern\\gas calibration app\\gaslabapp\\gaslabapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{7486A7F8-BF3A-476F-A92A-B525714598D1}|GasLabApp.csproj|solutionrelative:gaslabapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fernandj\\AppData\\Local\\Temp\\.vsdbgsrc\\e838e50353acd66f964b3aa62f2ead8b89cb9228844b858a3e0b8d14655eca6e\\XamlReader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,95 +49,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ListComPorts.cs",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\ListComPorts.cs",
-              "RelativeDocumentMoniker": "ListComPorts.cs",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\ListComPorts.cs",
-              "RelativeToolTip": "ListComPorts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\GasLabApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\GasLabApp\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "MainWindow.xaml.cs*",
+              "ViewState": "AgIAAK0AAAAAAAAAAADwv7sAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-07T22:25:42.011Z",
+              "WhenOpened": "2026-02-05T23:32:18.632Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Device.cs",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\Device.cs",
-              "RelativeDocumentMoniker": "Device.cs",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\Device.cs",
-              "RelativeToolTip": "Device.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAtwFoAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "StableTimer.cs",
+              "DocumentMoniker": "D:\\GasLabApp\\StableTimer.cs",
+              "RelativeDocumentMoniker": "StableTimer.cs",
+              "ToolTip": "D:\\GasLabApp\\StableTimer.cs",
+              "RelativeToolTip": "StableTimer.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIA0wCUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T20:48:14.584Z",
+              "WhenOpened": "2026-02-05T21:26:22.775Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PressureControllerDisplay.xaml.cs",
+              "DocumentMoniker": "D:\\GasLabApp\\PressureControllerDisplay.xaml.cs",
+              "RelativeDocumentMoniker": "PressureControllerDisplay.xaml.cs",
+              "ToolTip": "D:\\GasLabApp\\PressureControllerDisplay.xaml.cs",
+              "RelativeToolTip": "PressureControllerDisplay.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAIApwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T21:12:34.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "XamlReader.cs",
+              "DocumentMoniker": "C:\\Users\\fernandj\\AppData\\Local\\Temp\\.vsdbgsrc\\e838e50353acd66f964b3aa62f2ead8b89cb9228844b858a3e0b8d14655eca6e\\XamlReader.cs",
+              "ToolTip": "C:\\Users\\fernandj\\AppData\\Local\\Temp\\.vsdbgsrc\\e838e50353acd66f964b3aa62f2ead8b89cb9228844b858a3e0b8d14655eca6e\\XamlReader.cs [Read Only]",
+              "ViewState": "AgIAAJwBAAAAAAAAAAAWwKEBAABXAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T21:27:25.242Z",
+              "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "CPC6050Monitor.cs",
+              "DocumentMoniker": "D:\\GasLabApp\\CPC6050Monitor.cs",
+              "RelativeDocumentMoniker": "CPC6050Monitor.cs",
+              "ToolTip": "D:\\GasLabApp\\CPC6050Monitor.cs",
+              "RelativeToolTip": "CPC6050Monitor.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAiwGsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T23:47:03.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Cpc6050Emulator.cs",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\Cpc6050Emulator.cs",
+              "DocumentMoniker": "D:\\GasLabApp\\Cpc6050Emulator.cs",
               "RelativeDocumentMoniker": "Cpc6050Emulator.cs",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\Cpc6050Emulator.cs",
+              "ToolTip": "D:\\GasLabApp\\Cpc6050Emulator.cs",
               "RelativeToolTip": "Cpc6050Emulator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-05T22:32:29.954Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "MainWindow.xaml.cs*",
-              "ViewState": "AgIAACIAAAAAAAAAAIAiwDoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T21:45:34.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IReference.cs",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\IReference.cs",
-              "RelativeDocumentMoniker": "IReference.cs",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\IReference.cs",
-              "RelativeToolTip": "IReference.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-04T21:22:51.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Cpc6050Client.cs",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\Cpc6050Client.cs",
+              "DocumentMoniker": "D:\\GasLabApp\\Cpc6050Client.cs",
               "RelativeDocumentMoniker": "Cpc6050Client.cs",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\Cpc6050Client.cs",
+              "ToolTip": "D:\\GasLabApp\\Cpc6050Client.cs",
               "RelativeToolTip": "Cpc6050Client.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-04T21:16:29.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "SerialPortClient.cs",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\SerialPortClient.cs",
+              "DocumentMoniker": "D:\\GasLabApp\\SerialPortClient.cs",
               "RelativeDocumentMoniker": "SerialPortClient.cs",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\SerialPortClient.cs",
+              "ToolTip": "D:\\GasLabApp\\SerialPortClient.cs",
               "RelativeToolTip": "SerialPortClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAApwFwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T03:55:42.725Z",
               "EditorCaption": ""
@@ -146,26 +156,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "IController.cs",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\IController.cs",
-              "RelativeDocumentMoniker": "IController.cs",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\IController.cs",
-              "RelativeToolTip": "IController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Title": "Device.cs",
+              "DocumentMoniker": "D:\\GasLabApp\\Device.cs",
+              "RelativeDocumentMoniker": "Device.cs",
+              "ToolTip": "D:\\GasLabApp\\Device.cs",
+              "RelativeToolTip": "Device.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAjwMoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T01:46:57.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GasLabApp.csproj",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\GasLabApp.csproj",
-              "RelativeDocumentMoniker": "GasLabApp.csproj",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\GasLabApp.csproj",
-              "RelativeToolTip": "GasLabApp.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-07T22:05:54.772Z"
+              "WhenOpened": "2025-12-08T20:48:14.584Z",
+              "EditorCaption": ""
             }
           ]
         }
@@ -175,13 +174,13 @@
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "FloatingWindowState": {
-        "Id": "69d18b02-871f-4024-8393-b63cb7f3afba",
+        "Id": "03c6467e-7628-4b56-b7c8-0d1397b7e6b9",
         "Display": 2,
-        "X": 492,
-        "Y": 131,
-        "Width": 1211,
-        "Height": 590,
-        "WindowState": 2
+        "X": 230,
+        "Y": 105,
+        "Width": 1514,
+        "Height": 738,
+        "WindowState": 0
       },
       "DocumentGroups": [
         {
@@ -190,14 +189,14 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
+              "DocumentIndex": 5,
+              "Title": "PressureControllerDisplay.xaml",
+              "DocumentMoniker": "D:\\GasLabApp\\PressureControllerDisplay.xaml",
+              "RelativeDocumentMoniker": "PressureControllerDisplay.xaml",
+              "ToolTip": "D:\\GasLabApp\\PressureControllerDisplay.xaml",
+              "RelativeToolTip": "PressureControllerDisplay.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-01-04T21:45:46.908Z",
+              "WhenOpened": "2026-02-05T21:12:37.524Z",
               "EditorCaption": ""
             }
           ]

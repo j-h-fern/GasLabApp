@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-Z:\QA\Laverton GAS\JohnFern\Gas Calibration App\GasLabApp\obj\Debug\net9.0-windows\
+D:\GasLabApp\obj\Debug\net9.0-windows\
 GasLabApp
 none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-Z:\QA\Laverton GAS\JohnFern\Gas Calibration App\GasLabApp\App.xaml
-11407045341
+D:\GasLabApp\App.xaml
+2-910057629
 
-1220205523
+16698313934
 201-1017251672
-MainWindow.xaml;
+MainWindow.xaml;PressureControllerDisplay.xaml;
 
 False
 

@@ -19,7 +19,7 @@ namespace GasLabApp
         public string GetUnits();
         //set the units
         public void SetUnits(string value);
-        //Get the current stability status of the controller 
+        //Get the current stability status of the controller
 
 
 

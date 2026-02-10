@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Concurrent;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Text;
 using System.Threading;
@@ -174,34 +175,49 @@ namespace GasLabApp
 
         // --------- Core request/response helpers ---------
 
-        private string Query(string command, int timeoutMs = 1000)
+        private string Query(string command, int timeoutMs = 10000)
         {
             lock (_ioLock)
             {
                 // Drop any stale line(s) before sending a new command
                 while (_lineQ.TryDequeue(out _)) { /* discard */ }
 
-                // Send command (no sleep, no ReadLine)
+                // Send command
                 _sp.WriteLine(command);
-
+                
                 // Wait for the next parsed line
                 try
                 {
                     var line = DequeueLineAsync(timeoutMs).GetAwaiter().GetResult();
 
-                    // Optional: ignore echo if device ever echoes (default is echo OFF)
+                     //Optional: ignore echo if device ever echoes (default is echo OFF)
                     if (string.Equals(line, command, StringComparison.OrdinalIgnoreCase))
                     {
                         // Get the real response line
                         line = DequeueLineAsync(timeoutMs).GetAwaiter().GetResult();
                     }
-
+                    
                     return line ?? string.Empty;
                 }
                 catch (TaskCanceledException)
                 {
                     throw new TimeoutException($"Timed out waiting for response to '{command}'");
                 }
+            }
+        }
+
+        private void Command(string command, int timeoutMs = 10000)
+        {
+            lock (_ioLock)
+            {
+                // Drop any stale line(s) before sending a new command
+                while (_lineQ.TryDequeue(out _)) { /* discard */ }
+
+                // Send command
+                _sp.WriteLine(command);
+
+
+
             }
         }
 
@@ -241,26 +257,26 @@ namespace GasLabApp
             return resp.Equals("NO ERRORS", StringComparison.OrdinalIgnoreCase) ? null : resp;
         }
 
-        public enum Channel { A, B }
+        
 
-        public Channel ReturnChVal(string ch) 
+        public PConChannel ReturnChVal(string ch) 
         { 
-            if(ch.ToLower() =="a") return Channel.A;
-            if(ch.ToLower() =="b") return Channel.B;
-            else throw new InvalidOperationException("Channel value must be A or B");
+            if(ch.ToLower() =="a") return PConChannel.A;
+            if(ch.ToLower() =="b") return PConChannel.B;
+            else throw new InvalidOperationException("PConChannel value must be A or B");
         }
-        public void SetChannel(Channel ch) => _ = Query($"Chan {(ch == Channel.A ? "A" : "B")}");
-        public Channel GetChannel()
+        public void SetChannel(PConChannel ch) => Command ($"Chan {(ch == PConChannel.A ? "A" : "B")}");
+        public PConChannel GetChannel()
         {
             var raw = Query("Chan?");
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Instrument error flag. Next error: {GetNextError() ?? "unknown"}");
-            return resp == "A" ? Channel.A : Channel.B;
+            return resp == "A" ? PConChannel.A : PConChannel.B;
         }
 
-        public double GetPressure(Channel ch)
+        public double GetPressure(PConChannel ch)
         {
-            var raw = Query(ch == Channel.A ? "A?" : "B?");
+            var raw = Query(ch == PConChannel.A ? "A?" : "B?");
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on read. Next error: {GetNextError() ?? "unknown"}");
             return ParseDoubleInvariant(resp);
@@ -269,15 +285,15 @@ namespace GasLabApp
         public double GetReading()
         {
             var ch = GetChannel();
-            var raw = Query(ch == Channel.A ? "A?" : "B?");
+            var raw = Query(ch == PConChannel.A ? "A?" : "B?");
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on read. Next error: {GetNextError() ?? "unknown"}");
             return ParseDoubleInvariant(resp);
         }
 
-        public bool IsStable(Channel ch)
+        public bool IsStable(PConChannel ch)
         {
-            var raw = Query(ch == Channel.A ? "AS?" : "BS?");
+            var raw = Query(ch == PConChannel.A ? "AS?" : "BS?");
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on stability query. Next error: {GetNextError() ?? "unknown"}");
             return resp.Equals("YES", StringComparison.OrdinalIgnoreCase);
@@ -286,35 +302,45 @@ namespace GasLabApp
         public bool IsStable()
         {
             var ch = GetChannel();
-            var raw = Query(ch == Channel.A ? "AS?" : "BS?");
+            var raw = Query(ch == PConChannel.A ? "AS?" : "BS?");
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on stability query. Next error: {GetNextError() ?? "unknown"}");
             return resp.Equals("YES", StringComparison.OrdinalIgnoreCase);
         }
 
-        public double GetRate(Channel ch)
+        public double GetRate(PConChannel ch)
         {
-            var raw = Query(ch == Channel.A ? "AR?" : "BR?");
+            var raw = Query(ch == PConChannel.A ? "AR?" : "BR?");
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on rate query. Next error: {GetNextError() ?? "unknown"}");
             return ParseDoubleInvariant(resp);
         }
 
-        public enum Mode { Measure, Control, Vent }
+        
 
-        public void SetMode(Mode mode) => _ = Query($"Mode {mode.ToString().ToUpperInvariant()}");
-        public Mode GetMode()
+        public void SetMode(PconMode mode) => Command($" {mode.ToString().ToUpperInvariant()}");
+
+        public bool IsMode(PconMode mode)
         {
-            var raw = Query("Mode?");
+            var raw = Query($"{mode.ToString()}?");
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on mode query. Next error: {GetNextError() ?? "unknown"}");
 
-            if (resp.StartsWith("MEASURE", StringComparison.OrdinalIgnoreCase)) return Mode.Measure;
-            if (resp.StartsWith("CONTROL", StringComparison.OrdinalIgnoreCase)) return Mode.Control;
-            return Mode.Vent;
+            // if (resp.StartsWith("YES", StringComparison.OrdinalIgnoreCase)) return true;
+            if (resp.StartsWith($"{mode.ToString()}", StringComparison.OrdinalIgnoreCase)) return true;
+
+            return false;
         }
 
-        public void SetSetPoint(double value) => _ = Query($"Setpt {value.ToString("G", CultureInfo.InvariantCulture)}");
+ 
+        public PconMode GetMode()
+        {
+            if(IsMode(PconMode.Vent))return PconMode.Vent;
+            if (IsMode(PconMode.Control)) return PconMode.Control;
+            else return PconMode.Measure;
+        }
+
+        public void SetSetPoint(double value) => Command($"Setpt {value.ToString("G", CultureInfo.InvariantCulture)}");
         public double GetSetPoint()
         {
             var raw = Query("Setpt?");
@@ -329,10 +355,10 @@ namespace GasLabApp
             _ = Query($"Control_behavior {value}");
         }
 
-        public void SetControlRatePreset(string preset) => _ = Query($"Crate {preset}");
-        public void SetRateSetpoint(double value) => _ = Query($"Rsetpt {value.ToString("G", CultureInfo.InvariantCulture)}");
+        public void SetControlRatePreset(string preset) => Command($"Crate {preset}");
+        public void SetRateSetpoint(double value) => Command($"Rsetpt {value.ToString("G", CultureInfo.InvariantCulture)}");
 
-        public bool WaitStable(Channel ch, TimeSpan timeout, TimeSpan pollInterval)
+        public bool WaitStable(PConChannel ch, TimeSpan timeout, TimeSpan pollInterval)
         {
             var deadline = DateTime.UtcNow + timeout;
             while (DateTime.UtcNow < deadline)
@@ -343,7 +369,7 @@ namespace GasLabApp
             return false;
         }
 
-        public void SetUnits(string unitToken) => _ = Query($"Units {unitToken}");
+        public void SetUnits(string unitToken) => Command($"Units {unitToken}");
         public string GetUnits()
         {
             var raw = Query("Units?");
@@ -352,17 +378,41 @@ namespace GasLabApp
             return resp;
         }
 
-        public void SetPressureType(string type) => _ = Query($"Ptype {type}");
-        public string GetPressureType()
+        
+        public static Ptype GetPtypeFromString(string ptype)
+        {
+            if( ptype.ToString() == null ) throw new ArgumentNullException(nameof(ptype));
+            if (ptype.ToString() == "Gauge") return Ptype.Gauge;
+            if (ptype.ToString() == "GAUGE EMULATION") return Ptype.Gauge;
+            if (ptype.ToString() == "Absolute") return Ptype.Abs;
+
+            throw new InvalidOperationException("ValueMust be gauge or absolute");
+        }
+
+
+        public void SetPressureType(Ptype ptype) => Command($"Ptype {(ptype == Ptype.Gauge ? "Gauge" : "Absolute")}");
+
+        public void SetPressureType(string type) => Command($"Ptype {type}");
+        public Ptype GetPressureType()
         {
             var raw = Query("Ptype?");
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on pressure-type query. Next error: {GetNextError() ?? "unknown"}");
-            return resp;
+            if (resp.ToLower() == "gauge") return Ptype.Gauge;
+            if (resp.ToLower() == "absolute") return Ptype.Abs;
+            else throw new InvalidOperationException("Pressure Type value must be Gauge or Absolute");
+           
         }
 
-        public void Vent() => _ = Query("Vent");
-        public void Measure() => _ = Query("Measure");
-        public void Control() => _ = Query("Control");
+        public void Vent() =>  Command("Vent");
+        public void Measure() =>  Command("Measure");
+        public void Control() => Command("Control");
     }
+
+    //--Public Facing Enums
+    public enum Ptype { Gauge, Abs }
+
+    public enum PConChannel { A, B }
+
+    public enum PconMode { Measure, Control, Vent }
 }

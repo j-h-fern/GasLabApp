@@ -5,37 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GasLabApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1200" Width="1500">
+        Title="MainWindow" Height="auto" Width="750">
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="49*" />
-            <ColumnDefinition Width="151*" />
+            <ColumnDefinition Width="30*" />
             <ColumnDefinition Width="100*" />
+            
         </Grid.ColumnDefinitions>
-        <Label>TEST</Label>
 
 
 
-        <Border BorderBrush="Black" BorderThickness="1.5" Background="#FFEDEDDF" Margin="5,5,5,5" Grid.RowSpan="3"/>
+
+        <Border  Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1.5" Background="#FFEDEDDF" Margin="5,5,5,5" Grid.RowSpan="3"/>
         <ListBox Grid.Row="1" Grid.Column="0" x:Name="TEST" />
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" >
-            <ListBox x:Name="ComList" Height="50" Margin="6,6,6,6" >SELECT COM PORT NUMBER --Defualt virtual (COM30)</ListBox>
+        <StackPanel Background="#FFEDEDDF" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" >
+            <ListBox x:Name="ComList" Height="50" Margin="6,6,6,6"  >SELECT COM PORT NUMBER--Defualt virtual (COM21)</ListBox>
             <Button x:Name="COM_Button" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="GetComPort">Set COM port</Button>
+            <ListBox x:Name="DeviceList"  >Select Device</ListBox>
             <Button x:Name="COM_Connect" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="GetConnection">Connect To Device</Button>
             <TextBox x:Name="Debug_Text_Box" Height="200" Margin="6,6,6,6"></TextBox>
-            <Button x:Name="Debug_Button" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="DebugDisplay"> Display DeBug Information</Button>
-            
-            
+            <Button x:Name="START" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="Start_Click">START</Button>
+            <Button x:Name="STOP" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="Stop_Click">STOP</Button>
+            <Button x:Name="Debug_Button" VerticalAlignment="Bottom" Margin="5,5,5,5" Click="DebugDisplay">Display DeBug Information</Button>
+
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" x:Name = "ControlContainer" >
             
         </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
 
     </Grid>
 </Window>

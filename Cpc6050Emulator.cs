@@ -32,8 +32,8 @@ namespace GasLabApp
         private string _units = "KPA";     // Units token
         private string _ptype = "Gauge";   // "Gauge" or "Absolute"
 
-        private double _pA = 0.0;          // Channel A pressure (units)
-        private double _pB = 0.0;          // Channel B pressure (units)
+        private double _pA = 0.0;          // PConChannel A pressure (units)
+        private double _pB = 0.0;          // PConChannel B pressure (units)
         private double _setpt = 0.0;       // Control setpoint (units)
         private double _rateSetpt = 5.0;   // Variable rate setpoint (units/sec)
         private string _ratePreset = "Variable"; // "Slow"|"Medium"|"Fast"|"Variable"
@@ -61,8 +61,8 @@ namespace GasLabApp
             Parity parity = Parity.None,
             int dataBits = 8,
             StopBits stopBits = StopBits.One,
-            int readTimeoutMs = 2000,
-            int writeTimeoutMs = 2000):base(portName)
+            int readTimeoutMs = 10000,
+            int writeTimeoutMs = 10000):base(portName)
         {
             EnsurePortExists(portName);
             _port = new SerialPort(portName, baudRate, parity, dataBits, stopBits)
@@ -112,7 +112,7 @@ namespace GasLabApp
                         n = await _port.BaseStream.ReadAsync(buf, 0, buf.Length, ct).ConfigureAwait(false);
                     }
                     catch (OperationCanceledException) { break; }
-                    catch (TimeoutException) { continue; } // not expected with async, but harmless
+                    catch (TimeoutException) { continue; } 
                     catch
                     {
                         // swallow read exceptions in an emulator context and continue
@@ -245,10 +245,12 @@ namespace GasLabApp
             string payload;
             try
             {
+                Console.WriteLine($"Tx:{cmd}");
                 // Compute response (and mutate state) under lock
                 lock (_stateLock)
                 {
                     payload = ComputeResponse(cmd);
+                    Console.WriteLine($"Rx:{payload}");
                 }
             }
             catch (Exception ex)
@@ -349,6 +351,16 @@ namespace GasLabApp
                     _mode = Mode.Vent;
                     return "VENT";
 
+                case "CONTROL?":
+                    
+                    return _mode.ToString();
+
+                case "MEASURE?":
+                    return _mode.ToString();
+
+                case "VENT?":
+                    return _mode.ToString();
+
                 case "A?":
                     return FormatNumber(_pA);
 
@@ -425,6 +437,25 @@ namespace GasLabApp
             {
                 // swallow in emulator; real device would not do this
             }
+        }
+
+        /// -*-Code for printing Emulated display with out serial port for Debugging-*-
+
+
+        public double GetPressure()
+        {
+            return (_activeChannel == Channel.A ? _pA : _pB);
+
+        }
+
+        public string GetPtype()
+        {
+            return _ptype;
+        }
+
+        public string GetMode()
+        {
+            return  _mode.ToString();
         }
     }
 }

@@ -40,3 +40,49 @@ Z:\QA\Laverton GAS\JohnFern\Gas Calibration App\GasLabApp\obj\Debug\net9.0-windo
 Z:\QA\Laverton GAS\JohnFern\Gas Calibration App\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.pdb
 Z:\QA\Laverton GAS\JohnFern\Gas Calibration App\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.genruntimeconfig.cache
 Z:\QA\Laverton GAS\JohnFern\Gas Calibration App\GasLabApp\obj\Debug\net9.0-windows\ref\GasLabApp.dll
+Z:\QA\Laverton GAS\JohnFern\Gas Calibration App\GasLabApp\obj\Debug\net9.0-windows\PressureControllerDisplay.g.cs
+Z:\QA\Laverton GAS\JohnFern\Gas Calibration App\GasLabApp\obj\Debug\net9.0-windows\PressureControllerDisplay.baml
+D:\GasLabApp\bin\Debug\net9.0-windows\GasLabApp.exe
+D:\GasLabApp\bin\Debug\net9.0-windows\GasLabApp.deps.json
+D:\GasLabApp\bin\Debug\net9.0-windows\GasLabApp.runtimeconfig.json
+D:\GasLabApp\bin\Debug\net9.0-windows\GasLabApp.dll
+D:\GasLabApp\bin\Debug\net9.0-windows\GasLabApp.pdb
+D:\GasLabApp\bin\Debug\net9.0-windows\System.IO.Ports.dll
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\unix\lib\net9.0\System.IO.Ports.dll
+D:\GasLabApp\bin\Debug\net9.0-windows\runtimes\win\lib\net9.0\System.IO.Ports.dll
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.csproj.AssemblyReference.cache
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.csproj.ResolveComReference.cache
+D:\GasLabApp\obj\Debug\net9.0-windows\MainWindow.g.cs
+D:\GasLabApp\obj\Debug\net9.0-windows\PressureControllerDisplay.g.cs
+D:\GasLabApp\obj\Debug\net9.0-windows\App.g.cs
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp_MarkupCompile.cache
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp_MarkupCompile.lref
+D:\GasLabApp\obj\Debug\net9.0-windows\MainWindow.baml
+D:\GasLabApp\obj\Debug\net9.0-windows\PressureControllerDisplay.baml
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.g.resources
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.AssemblyInfoInputs.cache
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.AssemblyInfo.cs
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.csproj.CoreCompileInputs.cache
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.csproj.Up2Date
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.dll
+D:\GasLabApp\obj\Debug\net9.0-windows\refint\GasLabApp.dll
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.pdb
+D:\GasLabApp\obj\Debug\net9.0-windows\GasLabApp.genruntimeconfig.cache
+D:\GasLabApp\obj\Debug\net9.0-windows\ref\GasLabApp.dll

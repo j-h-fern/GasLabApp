@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="GasLabApp.PressureControllerDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GasLabApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
+        <Border  Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1.5" Background="#FFEDEDDF"  Grid.RowSpan="3"/>
+        <StackPanel>
+
+            <TextBlock Grid.Row="0" x:Name="DeviceName" Grid.Column="0"  FontSize="16" TextAlignment="Center" FontStyle="Oblique" Background="LightGray" Margin="3,3,3,3" >Device Name</TextBlock>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="1" Grid.Column="1">
+
+                    <TextBlock  x:Name="SetPointDisplay"  Margin="3,3,3,3" FontSize="20" TextAlignment="Center" Background="LightGray"  >SetPoint</TextBlock>
+                    <TextBlock  x:Name="Stable"  Margin="3,3,3,3" FontSize="20" TextAlignment="Center" Background="LightGray" Text= "{Binding Stable, Mode=OneWay, StringFormat=F1}" ></TextBlock>
+                    <TextBlock Grid.Row="1" x:Name="StableTimer" Grid.Column="1" Margin="3,3,3,3" FontSize="20" TextAlignment="Center" Background="LightGray" Text= "{Binding StableElapsed, Mode=OneWay, StringFormat=F1}"  ></TextBlock>
+
+                </StackPanel>
+
+                <TextBlock Grid.Row="0" x:Name="ReadingLable" Grid.Column="0" FontSize="16" TextAlignment="Center" Background="LightGray" >Main Reading</TextBlock>
+                <Grid Grid.Row="1
+                      ">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*" />
+                        <ColumnDefinition Width="30*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1">
+                        <Label Grid.Column="1" x:Name="Units" Height="30" Margin="1,1,1,1" FontWeight="Bold" FontSize="15" BorderThickness="1" BorderBrush="Black"  Background="LightGray" Content= "{Binding Units, Mode=OneWay, StringFormat=F1}"  />
+                        <Label Grid.Column="1" x:Name="Mode" Height="30" Margin="1,1,1,1"   BorderThickness="1" BorderBrush="Black"  Background="LightGray" Content= "{Binding Mode, Mode=OneWay, StringFormat=F1}"  />
+                        <Label Grid.Column="1" x:Name="Ptype" Height="30" Margin="1,1,1,1"   BorderThickness="1" BorderBrush="Black"  Background="LightGray" Content= "{Binding PType, Mode=OneWay, StringFormat=F1}"  />
+                    </StackPanel>
+                    <TextBlock Grid.Row="1" x:Name="Main" Grid.Column="0" Margin="3,3,3,3" FontSize="50" FontWeight="Bold" TextAlignment="Center" Background="LightGray" Text= "{Binding Pressure, Mode=OneWay, StringFormat=F3}" ></TextBlock>
+
+
+
+
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="1" x:Name="Max" Grid.Column="0" Margin="3,3,3,3" FontSize="20" TextAlignment="Left" Background="LightGray"  >MAX</TextBlock>
+                <TextBlock Grid.Row="1" x:Name="Min" Grid.Column="1" Margin="3,3,3,3" FontSize="20" TextAlignment="Left" Background="LightGray"  >MIN</TextBlock>
+                <TextBlock Grid.Row="1" x:Name="Avg" Grid.Column="2" Margin="3,3,3,3" FontSize="20" TextAlignment="Left" Background="LightGray"  >AVG</TextBlock>
+            </Grid>
+            <Border BorderBrush="Black" BorderThickness="2" CornerRadius="3">
+                <TextBlock Grid.Row="1" x:Name="ManCon" Grid.Column="2" Margin="3,3,3,3" FontSize="20" TextAlignment="Center" Background="LightGray"  >Manual Control</TextBlock>
+            </Border>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBox x:Name="SetPointValue" Height="50" Width="150" FontSize="25" TextAlignment="Center" Margin="1,3,3,3"></TextBox>
+                    <Button x:Name="SetPointButton" Margin="3,1,3,3" Click="SetPoint">SET</Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Button x:Name="MesureButton" Margin=" 1,1,1,1" Click="Measure">Mesurement</Button>
+                    <Button x:Name="ControlButton" Margin=" 1,1,1,1" Click="Control">Control</Button>
+                    <Button x:Name="VentButton" Height="30" FontSize="20" FontWeight="Bold" Margin=" 1,1,1,1" Click="Vent">Vent</Button>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <ComboBox x:Name="PtypeList">Mesurement Type
+                        <ComboBoxItem>Gauge</ComboBoxItem>
+                        <ComboBoxItem>Absolute</ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="SetTypeButton" Click="SetPtype">Set Type</Button>
+                    <ComboBox x:Name="UnitList">Units</ComboBox>
+                    <Button x:Name="SetUnitButton" Click="SetUnits">Set Units</Button>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>

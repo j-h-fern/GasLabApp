@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -16,6 +17,16 @@ namespace GasLabApp
         public IReference? Ref { get; private set; }
         // if the device will function as a controller 
         public IController? Contr { get; private set; }
+
+        public List<string> Units;
+
+ 
+
+
+
+
+
+
 
 
 
@@ -36,6 +47,8 @@ namespace GasLabApp
 
 
         }
+
+        
 
         public Device(IReference _ref)
         {
@@ -94,8 +107,8 @@ namespace GasLabApp
         
         public PressureController( IController _contr) : base(_contr)
         {
-            
 
+            
 
             
         }
@@ -105,9 +118,15 @@ namespace GasLabApp
     public class CPC6050: PressureController
     {
         private readonly Cpc6050Client client;
-        public CPC6050( IController _contr, Cpc6050Client _client) : base(_contr)
+        public CPC6050Monitor Monitor { get; private set; }
+        
+        public CPC6050( IController _contr, Cpc6050Client _client ) : base(_contr)
         {
-            client = _client;
+            client = _client ?? throw new ArgumentNullException(nameof(_client));
+            Units = new List<string> { "KPA", "PA","MBAR", "PSI" };
+            Monitor= new CPC6050Monitor( _client );
+           
+
 
         }
 
@@ -126,18 +145,73 @@ namespace GasLabApp
             return false;
         }
 
-        public string SetChannel(string ch)
+        public string SetChannel(PConChannel ch)
         {
 
-            if (CheckChannelInput(ch))
-            {
+  
 
-                client.SetChannel(client.ReturnChVal(ch));
+                client.SetChannel(ch);
                 
                 
-            }
+            
             return client.GetChannel().ToString();
         }
+
+        public string GetChannel() 
+        {
+            return client.GetChannel().ToString();
+
+        }
+
+        public string SetUnits(string units)
+        {
+            client.SetUnits(units);
+            return client.GetUnits().ToString();
+        }
+
+        public string GetUnits()
+        {
+            return client.GetUnits().ToString();
+        }
+
+        public double SetSetPoint(double setPoint)
+        { 
+            client.SetSetPoint(setPoint);
+            return client.GetSetPoint();
+        }
+        public double GetSetPoint()
+        { return client.GetSetPoint(); }
+
+        public string SetMode(PconMode mode)
+        {
+            client.SetMode(mode);
+            return client.GetMode().ToString();
+        }
+
+        public string GetMode() { return client.GetMode().ToString(); }
+
+        public bool WaitStable(PConChannel  channel, TimeSpan timeout, TimeSpan pollInterval)
+        {
+            return client.WaitStable(channel, timeout,pollInterval);
+        }
+
+        public string SetPressureType(  Ptype type)
+        {
+            client.SetPressureType(type);
+            return client.GetPressureType().ToString();
+        }
+        public string GetPressureType()
+        { return client.GetPressureType().ToString();}
+
+        public double GetReadingFromMainSensor()
+        {
+            return client.GetReading();
+        }
+
+
+
+
+
 
 
         

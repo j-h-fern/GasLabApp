@@ -1724,11 +1724,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\GasLabApp.csproj",
+      "projectUniqueName": "D:\\GasLabApp\\GasLabApp.csproj",
       "projectName": "GasLabApp",
-      "projectPath": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\GasLabApp.csproj",
+      "projectPath": "D:\\GasLabApp\\GasLabApp.csproj",
       "packagesPath": "C:\\Users\\fernandj\\.nuget\\packages\\",
-      "outputPath": "Z:\\QA\\Laverton GAS\\JohnFern\\Gas Calibration App\\GasLabApp\\obj\\",
+      "outputPath": "D:\\GasLabApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
