@@ -22,6 +22,9 @@ namespace GasLabApp
         private readonly Func<TimeSpan, CancellationToken, Task>? _onTick;
         private CancellationTokenSource? _cts;
         private readonly object _lock = new();
+       
+        public bool IsRunning { get; private set; } = false;
+        
 
         public AsyncStableTimer(
             TimeSpan tickInterval,
@@ -39,6 +42,7 @@ namespace GasLabApp
                 if (_cts != null) return; // already running
                 _cts = new CancellationTokenSource();
                 _sw.Start();
+                IsRunning = true;
                 _ = LoopAsync(_cts.Token);
             }
         }
@@ -52,6 +56,7 @@ namespace GasLabApp
                 old = _cts;
                 _cts = null;
                 _sw.Stop();
+                IsRunning = false;
             }
             old?.Cancel();
             old?.Dispose();
@@ -81,6 +86,10 @@ namespace GasLabApp
                 }
             }
         }
+
+
+
+
 
         public TimeSpan Elapsed => _sw.Elapsed;
 

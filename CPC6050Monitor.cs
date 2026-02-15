@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.ComponentModel;
+using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,9 +26,10 @@ namespace GasLabApp
         private double _pressure;
         private bool _stable;
         private string _error = "";
-        private int _stableElapsed = 0;
-        private bool _stableTime = false; 
-        private StableTimer StableTimer = new StableTimer(30);
+        private double _stableElapsed = 0;
+        private bool _stableTime = false;
+        private bool _step = false;
+
 
         public CPC6050Monitor(Cpc6050Client cpc)
         {
@@ -42,8 +44,9 @@ namespace GasLabApp
         public double Pressure { get => _pressure; private set => Set(ref _pressure, value); }
         public bool Stable { get => _stable; private set => Set(ref _stable, value); }
         public string Error { get => _error; private set => Set(ref _error, value); }
-        public int StableElapsed { get => _stableElapsed; private set => Set(ref _stableElapsed, value);  }
+        public double StableElapsed { get => _stableElapsed; private set => Set(ref _stableElapsed, value);  }
         public bool StableTime { get => _stableTime; private set => Set(ref _stableTime, value); }
+        public bool Step { get => _step; private set => Set(ref _step, value); }
 
 
         public async Task StartAsync(TimeSpan pollInterval)
@@ -57,13 +60,12 @@ namespace GasLabApp
                 try
                 {
                     if (!_cpc.IsOpen) _cpc.Open();
-                    StableTimer.Run(false);
                     var id = _cpc.Identify();
                     var mode = _cpc.GetMode().ToString();
                     var u = _cpc.GetUnits();
                     var pt = _cpc.GetPressureType().ToString();
-                    var stelpsd = StableTimer._secondsElapsed;
-                    var sttime = StableTimer.StableTimeElapsed;
+               
+                    
 
                     Application.Current.Dispatcher.Invoke(() =>
                     {
@@ -72,8 +74,8 @@ namespace GasLabApp
                         Units = u;
                         PType = pt;
                         Error = "";
-                        StableElapsed = stelpsd;
-                        StableTime = sttime;
+
+                        
 
                     });
                 }
@@ -105,8 +107,10 @@ namespace GasLabApp
                         var md = _cpc.GetMode().ToString();
                         var pt = _cpc.GetPressureType().ToString();
                         var u = _cpc.GetUnits();
-                        var stelpsd = StableTimer._secondsElapsed;
-                        var sttime = StableTimer.StableTimeElapsed;
+                        
+                      
+                        
+                      
 
 
                         Application.Current.Dispatcher.Invoke(() =>
@@ -118,9 +122,8 @@ namespace GasLabApp
                             Mode = md;
                             this.PType = pt;
                             Error = "";
-                            StableTimer.Run(Stable);
-                            StableElapsed = stelpsd;
-                            StableTime = sttime;
+                            Step = !Step;
+
                         });
                     }
                     catch (TimeoutException tex)
@@ -144,7 +147,12 @@ namespace GasLabApp
             }, _cts.Token);
         }
 
-        
+
+
+
+
+
+
 
         public void Stop()
         {
@@ -158,7 +166,7 @@ namespace GasLabApp
             {
                 _pollTask = null;
                 _cts?.Dispose();
-                StableTimer.Dispose();
+                
                 _cts = null;
             }
         }

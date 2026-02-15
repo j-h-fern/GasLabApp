@@ -36,7 +36,7 @@ namespace GasLabApp
             _sp.Open();
 
             // IMPORTANT: use async read loop; disable DataReceived lines in SerialPortClient
-            // by passing enableDataReceivedLines=false in its constructor (see patch above),
+            // by passing enableDataReceivedLines=false in its constructor ,
             // so only BytesReceived is active.
             _sp.BytesReceived += OnBytesReceived;
             _sp.StartAsyncReadLoop();
@@ -326,7 +326,7 @@ namespace GasLabApp
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on mode query. Next error: {GetNextError() ?? "unknown"}");
 
-            // if (resp.StartsWith("YES", StringComparison.OrdinalIgnoreCase)) return true;
+             if (resp.StartsWith("YES", StringComparison.OrdinalIgnoreCase)) return true;
             if (resp.StartsWith($"{mode.ToString()}", StringComparison.OrdinalIgnoreCase)) return true;
 
             return false;
@@ -399,6 +399,7 @@ namespace GasLabApp
             var resp = CleanResponse(raw, out var err);
             if (err) throw new InvalidOperationException($"Error flag on pressure-type query. Next error: {GetNextError() ?? "unknown"}");
             if (resp.ToLower() == "gauge") return Ptype.Gauge;
+            if (resp.ToLower() == "gauge emulation") return Ptype.Gauge;
             if (resp.ToLower() == "absolute") return Ptype.Abs;
             else throw new InvalidOperationException("Pressure Type value must be Gauge or Absolute");
            
